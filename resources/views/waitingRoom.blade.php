@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="text-center">
+        <h1>Waiting Room</h1>
+        <hr>
+    </div>
     <div class="container" id="room">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -13,6 +17,7 @@
                                     <br>
                                     <span>
                                         Name:
+                                        <!-- TODO name variable here -->
                                     </span>
                                 </div>
                                 <div class="col-md-2">
@@ -20,6 +25,7 @@
                                     <br>
                                     <span>
                                         Name:
+                                        <!-- TODO name variable here -->
                                     </span>
                                 </div>
                                 <div class="col-md-2">
@@ -27,6 +33,7 @@
                                     <br>
                                     <span>
                                         Name:
+                                        <!-- TODO name variable here -->
                                     </span>
                                 </div>
                                 <div class="col-md-2">
@@ -34,6 +41,7 @@
                                     <br>
                                     <span>
                                         Name:
+                                        <!-- TODO name variable here -->
                                     </span>
                                 </div>
                             </div>
@@ -50,7 +58,7 @@
                         <div class="waitingRoom-Code text-center">
                             <span class="waitingRoom-Label">
                                 Room:
-                                <!-- room variable can go here -->
+                                <!-- TODO room variable can go here -->
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -65,7 +73,7 @@
                                 </span>
                                 &nbsp;to join the game
                             </p>
-                            <!-- logic for host or not -->
+                            <!-- TODO logic to show button or not for host -->
                             <button class="btn btn-lg btn-success">Start</button>
                         </div>
                     </div>
