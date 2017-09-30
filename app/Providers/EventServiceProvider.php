@@ -16,6 +16,12 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
+        'App\Events\RoomCreated' => [
+            'App\Listeners\MakeRoomListener'
+        ],
+        'App\Events\PlayerJoined' => [
+            'App\Listeners\AddPlayerListener'
+        ]
     ];
 
     /**
