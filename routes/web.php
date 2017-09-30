@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/room', 'RoomController@index')->name('room');
+
+Route::get('/waitingRoom', 'WaitingRoomController@index')->name('waitingRoom');

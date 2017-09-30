@@ -1,0 +1,14 @@
+.waitingRoom-Label {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.waitingRoom-Code {
+    font-size: 30px;
+}
+
+.waitingRoom-avatar {
+    height: 30%;
+    width: 30%;
+}
