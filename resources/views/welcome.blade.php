@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <style>
             html, body {
                 background-color: #fff;
@@ -65,6 +66,7 @@
         </style>
     </head>
     <body>
+    <h1>Up Your Study Game!</h1>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -76,19 +78,16 @@
                     @endif
                 </div>
             @endif
-
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <button onClick="" id="makeRoomCode" name="makeRoomCodeName" class="btn btn-primary">Make a Room</button>
+                <br><br>
+                OR
+                <br><br>
+                <input id="roomCode" name="roomCodeName" type="text" placeholder="Room Code" />
+                <br><br>
+                <input id="roomTitle" name="roomTitleName" type="text" placeholder="Name" />
+                <br><br>
+                <button onClick="" id="joinRoom" name="joinRoomName" class="btn btn-success">Join Room</button>
             </div>
         </div>
     </body>
