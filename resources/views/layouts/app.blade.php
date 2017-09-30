@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/room.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/waitingRoom.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
