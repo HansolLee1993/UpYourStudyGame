@@ -12,11 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('test');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/room', 'RoomController@index')->name('room');
+//Show room create form
+Route::get('/room', 'RoomController@create')->name('room');
+//Request room, send to waiting room if successful
+Route::post('/room', 'RoomController@store');
+Route::get('/game/{id}', 'GameController@index');

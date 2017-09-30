@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlayerTable extends Migration
+class CreatePlayersForeign extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,12 @@ class CreatePlayerTable extends Migration
     public function up()
     {
         //
-        Schema::create('players', function(Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->unsignedInteger('game_id');
-            $table->timestamps();
+        Schema::table('players', function(Blueprint $table) {
+            $table->foreign('game_id')
+                ->references('id')
+                ->on('games')
+                ->onDelete('cascade');
         });
-
     }
 
     /**
@@ -30,6 +29,9 @@ class CreatePlayerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('players');
+        //
+        Schema::table('players', function(Blueprint $table) {
+            $table->dropForeign('game_id');
+        });
     }
 }
