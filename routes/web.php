@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/room', 'RoomController@index')->name('room');
+
+
+Route::get('/question', 'QuestionController@index')->name('question');
