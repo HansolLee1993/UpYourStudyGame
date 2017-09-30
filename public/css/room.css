@@ -1,0 +1,16 @@
+.room-content {
+    padding: 30px 0px;
+    margin: 0px;
+}
+.room-form{
+    padding-top: 40px;
+    padding-right: 0px;
+}
+
+#room .col-md-3 {
+    padding-right: 0px;
+}
+
+#room .panel-body{
+    padding-bottom: 50px;
+}
