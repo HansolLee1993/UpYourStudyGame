@@ -8,17 +8,33 @@
                     <div class="panel-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-3">
-                                    
+                                <div class="col-md-2">
+                                    <img id="player1" class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
+                                    <br>
+                                    <span>
+                                        Name:
+                                    </span>
                                 </div>
-                                <div class="col-3">
-
+                                <div class="col-md-2">
+                                    <img id="player2" class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
+                                    <br>
+                                    <span>
+                                        Name:
+                                    </span>
                                 </div>
-                                <div class="col-3">
-
+                                <div class="col-md-2">
+                                    <img id="player3" class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
+                                    <br>
+                                    <span>
+                                        Name:
+                                    </span>
                                 </div>
-                                <div class="col-3">
-
+                                <div class="col-md-2">
+                                    <img id="player4" class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
+                                    <br>
+                                    <span>
+                                        Name:
+                                    </span>
                                 </div>
                             </div>
                         </div>

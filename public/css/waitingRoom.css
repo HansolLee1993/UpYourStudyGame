@@ -7,3 +7,8 @@
 .waitingRoom-Code {
     font-size: 30px;
 }
+
+.waitingRoom-avatar {
+    height: 15%;
+    width: 15%;
+}
