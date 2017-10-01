@@ -22,19 +22,23 @@
 
                                 <div class="form-group question-padding col-md-12">
                                     <label for="question" class="col-md-3 control-label text-center">Categories</label>
-                                    <div class="col-md-4 no-padding-left " id ="taginput">
-                                        <div >Add Tags:<p id ="tags"></p></div><br/>
-                                        <input type="text" name="tags" id = "taginput"data-role="tagsinput" name="tags[]" placeholder="Tags" class="tm-input form-control tm-input-info tags"/>
+                                    <div class="col-md-4 no-padding-left " >
+                                        <input type="text" name="tags" id = "taginput"
+                                               placeholder="Tags" class="tm-input form-control "/>
+                                    </div>
+                                    <div id="invisible-tag-form">
 
                                     </div>
+
 
                                     <div class="col-md-2">
                                         <button class="add_tags_button btn-danger btn ">Add </button>
                                     </div>
-
-
-
+                                    <div class="tag-container col-md-offset-3 col-md-9"></div>
                                 </div>
+
+
+
 
                                 <div class="form-group question-padding">
                                     <div class="col-md-3 text-center">
@@ -58,7 +62,7 @@
                             </form>
 
                             <div class="col-md-12">
-                                <h1>Question Lists</h1>
+
                                 @if(isset($questions))
                                     @foreach($questions as $question)
                                         <p>{{ $question->question }}</p>
@@ -82,14 +86,12 @@
     </div>
 
     <script>
-
-        $(".tm-input").tagsManager();
-
         $(document).ready(function() {
             var max_fields      = 10;
             var wrapper         = $(".input_fields_wrap");
             var add_button      = $(".add_field_button");
             var add_tags_button = $(".add_tags_button");
+            var tag_container = $(".tag-container");
             var tag = $("#tags");
             var tagsarr = new Array();
 
@@ -112,16 +114,20 @@
             })
 
 
-
             $(add_tags_button).click(function(e) {
                 e.preventDefault();
-                tags = document.getElementById('taginput');
-                tagsarr.push(tag.val());
+                tag = $("#taginput").val();
+                console.log(tag);
+                tagsarr.push(tag);
                 console.log(tagsarr);
+                $(tag_container).append(
+                    ' <label class="label label-info">'+ tag +'</label>'
+                );
 
-                $("#tags").val(function() {
-                    return tagsarr;
-                });
+                $("#invisible-tag-form").append(
+                    '<input id="invisible-tag-form" name="tags[]" data-role="tagsinput" type="hidden" value="'+ tag +'">'
+                );
+
             });
 
 
