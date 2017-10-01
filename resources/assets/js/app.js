@@ -10,3 +10,4 @@ import Example from './components/Example';
 import SecondaryAnswerSelection from './components/SecondaryAnswerSelection';
 import SecondaryAnswerInput from './components/SecondaryAnswerInput';
 import WaitingRoomConsole from './components/WaitingRoomConsole';
+import SecondaryWelcome from './components/SecondaryWelcome';
