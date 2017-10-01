@@ -24,3 +24,5 @@ Route::get('/room', 'RoomController@index')->name('room');
 
 Route::get('/question', 'QuestionController@index')->name('question');
 Route::post('question', 'QuestionController@store');
+
+Route::get('mobile/mobileMain', 'MobileController@index');
