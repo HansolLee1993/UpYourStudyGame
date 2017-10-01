@@ -12,4 +12,9 @@ class Room extends Model
     protected $fillable = [
         'code', 'user_id'
     ];
+
+    public function game()
+    {
+        return $this->hasOne('App\Models\Game');
+    }
 }
