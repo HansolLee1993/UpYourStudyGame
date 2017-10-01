@@ -17,6 +17,7 @@
     <link href="{{ asset('css/answerSelection.css') }}" rel="stylesheet">
     <link href="{{ asset('css/answerInput.css') }}" rel="stylesheet">
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/secondaryWelcome.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

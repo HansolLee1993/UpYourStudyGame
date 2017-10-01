@@ -16,14 +16,16 @@
                                     </button>
                                 </div>
                                 <div class="col-md-5">
-                                    <div class="text-center">
+                                    <div class="text-center" style="padding-top:15px">
                                         @if (session('status'))
                                             <div class="alert alert-danger">
                                                 {{ session('status') }}
                                             </div>
                                         @endif
-                                        <h1><b>Welcome!</b></h1>
-                                        <img id="welcomePage-logo" src="{{asset('images/logo1.png')}}">
+                                        <img id="welcomePage-logo" src="{{asset('images/logo1.png')}}"/>
+                                        <h1 style="color:white">
+                                            <b>Up Your Study Game!</b>
+                                        </h1>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
