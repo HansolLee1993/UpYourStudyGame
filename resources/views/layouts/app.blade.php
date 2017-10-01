@@ -7,6 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{!! asset('images/logo1.png') !!}"/>
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -26,7 +27,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tagmanager/3.0.2/tagmanager.min.js"></script>
 
     <link href="{{ asset('css/waitingRoom.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/answerSelection.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/answerInput.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/secondaryWelcome.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/global.css') }}" rel="stylesheet">
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
 </head>
@@ -45,7 +50,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <img style="width:7%;border-radius:50px;" class="pull-left" src={{asset('images/logo1.png')}} />
+                    &nbsp;
+                    <a style="margin:0;" class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -92,6 +99,38 @@
     </div>
     @include('footer')
     <!-- Scripts -->
+    <script>
+        document.getElementById('answerTimer').innerHTML = 1 + ":" + 30;
+
+        function checkSecond(sec) {
+            if (sec < 10 && sec >= 0) {
+                sec = "0" + sec
+            }; // add zero in front of numbers < 10
+            if (sec < 0) {
+                sec = "59"
+            };
+            return sec;
+        }
+
+        function startTimer() {
+            var presentTime = document.getElementById('answerTimer').innerHTML;
+            var timeArray = presentTime.split(/[:]+/);
+            var m = timeArray[0];
+            var s = checkSecond((timeArray[1] - 1));
+            if (s == 59) {
+                m = m- 1
+            }
+            if(m < 0) {
+                alert('timer completed')
+            }
+
+            document.getElementById('answerTimer').innerHTML =
+                m + ":" + s;
+            setTimeout(startTimer, 1000);
+        }
+
+        startTimer();
+    </script>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

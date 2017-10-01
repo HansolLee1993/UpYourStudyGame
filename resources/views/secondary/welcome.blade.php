@@ -1,53 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container text-center">
+    <div class="container text-center" style="width:25%">
         <div class="row text-center">
             <div class="panel panel-default">
-                <div class="panel-body welcomePanelBody">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 hide-on-small" style="margin-top:100px">
-                                <button class="btn btn-primary btn-circle btn-lg openMakeRoomModal"
-                                        data-target="#makeRoomModal"
-                                        data-toggle="modal">
-                                    Make a Room
-                                </button>
-                            </div>
-                            <div class="text-center col-lg-4 col-sm-12" style="padding-top:15px">
+                <div class="panel-body secondaryWelcomePanelBody">
+                    <div>
+                        <div>
+                            <div class="text-center" style="padding-top:15px">
                                 @if (session('status'))
                                     <div class="alert alert-danger">
                                         {{ session('status') }}
                                     </div>
                                 @endif
-                                <img id="welcomePage-logo" src="{{asset('images/logo1.png')}}"/>
-                                <h2 style="color:white">
+                                <img id="secondaryWelcomePage-logo" src="{{asset('images/logo1.png')}}"/>
+                                <h3 style="color:white">
                                     <b>Up Your Study Game!</b>
-                                </h2>
-                            </div>
-
-                            <div class="col-lg-4 col-sm-6 hide-on-small" style="margin-top:100px">
-                                <button class="btn btn-success btn-circle btn-lg openJoinRoomModal"
-                                        data-target="#joinRoomModal"
-                                        data-toggle="modal">
-                                    Join a Room
-                                </button>
-                            </div>
-
-                            <div class="col-sm-6 hide-on-large">
-                                <button class="btn btn-primary btn-circle btn-lg openMakeRoomModal"
-                                        data-target="#makeRoomModal"
-                                        data-toggle="modal">
-                                    Make a Room
-                                </button>
-                                <button class="btn btn-success btn-circle btn-lg openJoinRoomModal"
-                                        data-target="#joinRoomModal"
-                                        data-toggle="modal">
-                                    Join a Room
-                                </button>
+                                </h3>
                             </div>
                         </div>
-
+                        <div>
+                            <button class="btn btn-primary btn-circle-secondary btn-sm openMakeRoomModal"
+                                    data-target="#makeRoomModal"
+                                    data-toggle="modal">
+                                Make a Room
+                            </button>
+                        </div>
+                        <br>
+                        <div>
+                            <button class="btn btn-success btn-circle-secondary btn-sm openJoinRoomModal"
+                                    data-target="#joinRoomModal"
+                                    data-toggle="modal">
+                                Join a Room
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,8 +75,8 @@
                             </div>
                         </div>
                         <!-- TODO need to populate with categories or something here -->
-                        <select id="categories" name="categories">
-                            <option value="physics">Physics</option>
+                        <select id="categories">
+                            <option value="none">Categories</option>
                             <option value="saab">HTML</option>
                             <option value="CSS">CSS</option>
                             <option value="JavaScript">JavaScript</option>

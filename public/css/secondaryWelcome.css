@@ -1,0 +1,13 @@
+#secondaryWelcomePage-logo {
+    width: 70%;
+    height: 100%;
+}
+
+.secondaryWelcomePanelBody {
+    text-align: center;
+    background-color: darkturquoise;
+}
+
+.inline {
+    display: inline-block;
+}
