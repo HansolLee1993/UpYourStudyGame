@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\User;
-use App\Models\Room;
-use App\Models\Game;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
-class RoomController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,18 +14,19 @@ class RoomController extends Controller
      */
     public function index()
     {
-        //return view('room');
+        $questions = Question::all();
+        return view('home', array('questions'=>$questions));
     }
 
     /**
-     * Show the form for creating a new room.
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
-        return view('room');
+
     }
 
     /**
@@ -39,24 +37,27 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        $roomAllocated = Room::whereNull('user_id')->first();
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Authentication passed...
-            $user = User::where('email', $request->email)->first();
-            $roomAllocated->user_id = $user->id;
-            $roomAllocated->save();
-            $game = new Game;
-            $game->user_id = $roomAllocated->user_id;
-            $game->room_id = $roomAllocated->id;
-            $game->code = $roomAllocated->code;
-            //$game->tag($request->categories);
-            $game->save();
+        $this->validate($request, [
+            'questions' => 'required',
+            'tags' => 'required',
+        ]);
 
-            return redirect('game/'.$game->id);
+        //$input = $request->all();
+        $allQuestions = $request->questions;
+        $allTags = $request->tags;
+        foreach($allQuestions as $q) {
+            $question = new Question;
+            $question->question = $q;
+            $question->save();
 
+            foreach($allTags as $tag) {
+                if(!$question->hasTag($tag)) {
+                    $question->tag($tag);
+                    $question->save();
+                }
+            }
         }
-        return back()->with('status', 'Could not authenticate user');
-
+        return back()->with('success','Question created successfully.');
     }
 
     /**
@@ -67,8 +68,7 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        //waiting room
-        //return view('waitingRoom');
+        //
     }
 
     /**

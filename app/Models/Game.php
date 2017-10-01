@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Lecturize\Tags\Traits\HasTags;
 
 class Game extends Model
 {
     //
+    use HasTags;
+
     public $table = 'games';
     public $timestamps = false;
     protected $fillable = [

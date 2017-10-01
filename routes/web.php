@@ -29,4 +29,11 @@ Route::get('/waitingRoom', 'WaitingRoomController@index')->name('waitingRoom');
 
 Route::get('/primary/answerSelection', 'WaitingRoomController@index')->name('/primary/answerSelection');
 
+Route::get('/mobile/mobileMain', 'MobileController@index');
+Route::post('/game/start/{id}', 'GameController@start');
+
 Route::post('/join', 'GameController@join');
+Route::middleware(['auth'])->group(function() {
+    Route::get('/question', 'QuestionController@index')->name('question');
+    Route::post('/question', 'QuestionController@store');
+});

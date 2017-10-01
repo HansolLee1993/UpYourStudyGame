@@ -9,5 +9,7 @@ require('./bootstrap');
 import Example from './components/Example';
 import SecondaryAnswerSelection from './components/SecondaryAnswerSelection';
 import SecondaryAnswerInput from './components/SecondaryAnswerInput';
-import WaitingRoomConsole from './components/WaitingRoomConsole';
+import WaitingRoomConsole from './components/primary/WaitingRoomConsole';
 import SecondaryWelcome from './components/SecondaryWelcome';
+import Console from './components/primary/Console';
+import GameView from './components/secondary/GameView';

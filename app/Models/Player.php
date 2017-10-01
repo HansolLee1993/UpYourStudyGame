@@ -10,7 +10,7 @@ class Player extends Model
     public $table = 'players';
     public $timestamps = true;
     protected $fillable = [
-        'name', 'game_id'
+        'name', 'game_id', 'points'
     ];
 
     public function game()

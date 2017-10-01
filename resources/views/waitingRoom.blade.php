@@ -9,4 +9,5 @@
         <div class="row" id="waitingRoom-console-react-entry">
         </div>
     </div>
+    <div class="container" id="console-react-entry"></div>
 @endsection

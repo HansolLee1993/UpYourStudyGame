@@ -89,8 +89,8 @@
                             </div>
                         </div>
                         <!-- TODO need to populate with categories or something here -->
-                        <select id="categories">
-                            <option value="none">Categories</option>
+                        <select id="categories" name="categories">
+                            <option value="physics">Physics</option>
                             <option value="saab">HTML</option>
                             <option value="CSS">CSS</option>
                             <option value="JavaScript">JavaScript</option>
