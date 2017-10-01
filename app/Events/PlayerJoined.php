@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Events;
-
+use App\Models\Player;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -10,18 +10,20 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class PlayerJoined
+class PlayerJoined implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $player;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Player $player)
     {
         //
+        $this->player = $player;
     }
 
     /**
@@ -31,6 +33,8 @@ class PlayerJoined
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        $game = $this->player->game_id;
+        //TODO make this a private channel
+        return new Channel('game.'.$game);
     }
 }
