@@ -59382,130 +59382,131 @@ var SecondaryAnswerSelection = function (_Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'container' },
+                    { className: 'container text-center' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'row' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'col-md-5 col-md-offset-3', style: { 'text-align': 'center' } },
+                            { className: 'panel panel-default' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: 'panel panel-default', style: { 'text-align': 'center' } },
+                                { className: 'panel-body' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
-                                    { className: 'panel-body', style: { 'text-align': 'center' } },
+                                    { className: 'row' },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'div',
-                                        { className: 'container', style: { 'display': 'inline-block' } },
+                                        { className: 'col-md-4 col-md-offset-4 text-center' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'div',
-                                            { className: 'row' },
+                                            'a',
+                                            { href: '#', id: 'option1' },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'div',
-                                                { className: 'col-md-4 text-center' },
+                                                { className: 'panel panel-default' },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                    'a',
-                                                    { href: '#', id: 'option1' },
-                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        'div',
-                                                        { className: 'panel panel-default' },
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'div',
-                                                            { className: 'panel-body optionAnswer1' },
-                                                            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
-                                                        )
-                                                    )
+                                                    'div',
+                                                    { className: 'panel-body optionAnswer1' },
+                                                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s'
                                                 )
                                             )
-                                        ),
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'row' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-4 col-md-offset-4 text-center' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'div',
-                                            { className: 'row' },
+                                            'a',
+                                            { href: '#', id: 'option2' },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'div',
-                                                { className: 'col-md-4 text-center' },
+                                                { className: 'panel panel-default' },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                    'a',
-                                                    { href: '#', id: 'option2' },
-                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        'div',
-                                                        { className: 'panel panel-default' },
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'div',
-                                                            { className: 'panel-body optionAnswer2' },
-                                                            'Option 2'
-                                                        )
-                                                    )
+                                                    'div',
+                                                    { className: 'panel-body optionAnswer2' },
+                                                    'Option 2'
                                                 )
                                             )
-                                        ),
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'row' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-4 col-md-offset-4 text-center' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'div',
-                                            { className: 'row' },
+                                            'a',
+                                            { href: '#', id: 'option3' },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'div',
-                                                { className: 'col-md-4 text-center' },
+                                                { className: 'panel panel-default' },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                    'a',
-                                                    { href: '#', id: 'option3' },
-                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        'div',
-                                                        { className: 'panel panel-default' },
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'div',
-                                                            { className: 'panel-body optionAnswer3' },
-                                                            'Option 3'
-                                                        )
-                                                    )
+                                                    'div',
+                                                    { className: 'panel-body optionAnswer3' },
+                                                    'Option 3'
                                                 )
                                             )
-                                        ),
+                                        )
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'row' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'div',
+                                        { className: 'col-md-4 col-md-offset-4 text-center' },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'div',
-                                            { className: 'row' },
+                                            'a',
+                                            { href: '#', id: 'option4' },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                                 'div',
-                                                { className: 'col-md-4 text-center' },
+                                                { className: 'panel panel-default' },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                    'a',
-                                                    { href: '#', id: 'option4' },
-                                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                        'div',
-                                                        { className: 'panel panel-default' },
-                                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                            'div',
-                                                            { className: 'panel-body optionAnswer4' },
-                                                            'Option 4'
-                                                        )
-                                                    )
+                                                    'div',
+                                                    { className: 'panel-body optionAnswer4' },
+                                                    'Option 4'
                                                 )
                                             )
                                         )
                                     )
                                 )
                             )
-                        ),
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'row' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'col-md-5 col-md-offset-3' },
+                            { className: 'col-md-4 col-md-offset-4' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'panel panel-default' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
                                     { className: 'panel-body text-center' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-time pull-left',
+                                        style: { 'font-size': '2.0em', 'color': 'red' } }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'p',
+                                        'div',
                                         null,
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-time timer' }),
-                                        '\xA0',
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'span',
-                                            { className: 'answerSelection-TimeLeft' },
-                                            '5'
+                                            { style: { 'font-size': '20px' } },
+                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                                'b',
+                                                null,
+                                                'Time left : '
+                                            )
                                         ),
-                                        '\xA0seconds left'
+                                        '\xA0',
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { id: 'answerTimer', className: 'answerSelection-TimeLeft' })
                                     )
                                 )
                             )
