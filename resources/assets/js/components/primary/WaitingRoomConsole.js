@@ -55,10 +55,6 @@ class WaitingRoomConsole extends Component {
         let players = this.renderPlayers();
         return (
             <div className="row">
-                <div className="text-center">
-                    <h1>Waiting Room</h1>
-                    <hr/>
-                </div>
                 <div className="col-md-8 col-md-offset-2">
                     <div className="panel panel-default">
                         <div className="panel-body">

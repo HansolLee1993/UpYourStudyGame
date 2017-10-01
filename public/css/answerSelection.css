@@ -1,0 +1,65 @@
+.answerSelection-TimeLeft {
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+}
+
+.btn-lg {
+    padding: 18px 28px;
+    font-size: 22px;
+    border-radius: 8px;
+    white-space: normal;
+}
+
+.optionAnswer1 {
+    color: white;
+    background-color: #FABC47;
+}
+
+.optionAnswer2 {
+    color: white;
+    background-color: #FABC47;
+}
+
+.optionAnswer3 {
+    color: white;
+    background-color: #FABC47;
+}
+
+.optionAnswer4 {
+    color: white;
+    background-color: #FABC47;
+}
+
+#option1 {
+    text-decoration: none;
+}
+#option1 a:hover {
+    opacity: 1;
+}
+
+#option2 {
+    text-decoration: none;
+}
+#option2:hover {
+}
+
+#option3 {
+    text-decoration: none;
+}
+#option3:hover {
+    opacity: 1;
+}
+
+#option4 {
+    text-decoration: none;
+}
+#option4:hover {
+    opacity: 1;
+}
+
+
