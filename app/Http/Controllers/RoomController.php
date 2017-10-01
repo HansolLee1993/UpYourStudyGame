@@ -45,10 +45,10 @@ class RoomController extends Controller
             $user = User::where('email', $request->email)->first();
             $roomAllocated->user_id = $user->id;
             $roomAllocated->save();
-
             $game = new Game;
             $game->user_id = $roomAllocated->user_id;
             $game->room_id = $roomAllocated->id;
+            $game->code = $roomAllocated->code;
             $game->save();
 
             return redirect('game/'.$game->id);

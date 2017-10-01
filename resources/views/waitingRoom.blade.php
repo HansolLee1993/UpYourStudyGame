@@ -12,38 +12,21 @@
                     <div class="panel-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-2">
-                                    <img id="player1" class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
-                                    <br>
-                                    <span>
-                                        Name:
-                                        <!-- TODO name variable here -->
-                                    </span>
-                                </div>
-                                <div class="col-md-2">
-                                    <img id="player2" class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
-                                    <br>
-                                    <span>
-                                        Name:
-                                        <!-- TODO name variable here -->
-                                    </span>
-                                </div>
-                                <div class="col-md-2">
-                                    <img id="player3" class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
-                                    <br>
-                                    <span>
-                                        Name:
-                                        <!-- TODO name variable here -->
-                                    </span>
-                                </div>
-                                <div class="col-md-2">
-                                    <img id="player4" class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
-                                    <br>
-                                    <span>
-                                        Name:
-                                        <!-- TODO name variable here -->
-                                    </span>
-                                </div>
+                                @if(isset($players))
+                                    @foreach($players as $player)
+                                        <div class="col-md-2">
+                                            <img id={{"player-".$player->id}} class="waitingRoom-avatar" src="{{asset('avatars/smiley_face.png')}}">
+                                            <br>
+                                            <span>
+                                                Name: {{$player->name}}
+                                            </span>
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <div class="col-md-2">
+                                        <span>No players :(</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -57,7 +40,7 @@
                         @endif
                         <div class="waitingRoom-Code text-center">
                             <span class="waitingRoom-Label">
-                                Room:
+                                Room: {{$game->room()->first()->code}}
                                 <!-- TODO room variable can go here -->
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -69,7 +52,7 @@
                             <p>
                                 Enter your name and the room code
                                 <span class="waitingRoom-Label">
-                                    test
+                                    {{$game->room()->first()->code}}
                                 </span>
                                 &nbsp;to join the game
                             </p>
