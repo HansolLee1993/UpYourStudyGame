@@ -7,4 +7,5 @@
 
 require('./bootstrap');
 import Example from './components/Example';
-import SecondaryActionSelection from './components/SecondaryAnswerSelection';
+import SecondaryAnswerSelection from './components/SecondaryAnswerSelection';
+import SecondaryAnswerInput from './components/SecondaryAnswerInput';

@@ -10,7 +10,7 @@ class SecondaryAnswerSelection extends Component {
                         <h1>Answer Selection Page</h1>
                         <h4>Choose the answer you think is right on your device!</h4>
                     </div>
-                    <hr />
+                    <hr/>
                 </div>
                 <div className="container">
                     <div className="row">

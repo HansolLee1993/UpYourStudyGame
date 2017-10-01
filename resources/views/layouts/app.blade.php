@@ -15,6 +15,7 @@
     <link href="{{ asset('css/room.css') }}" rel="stylesheet">
     <link href="{{ asset('css/waitingRoom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/answerSelection.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/answerInput.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
