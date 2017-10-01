@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\User;
+use App\Models\Room;
+use App\Models\Game;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
@@ -13,17 +17,18 @@ class RoomController extends Controller
      */
     public function index()
     {
-        return view('room');
+        //return view('room');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new room.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
+        return view('room');
     }
 
     /**
@@ -34,7 +39,23 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $roomAllocated = Room::whereNull('user_id')->first();
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // Authentication passed...
+            $user = User::where('email', $request->email)->first();
+            $roomAllocated->user_id = $user->id;
+            $roomAllocated->save();
+
+            $game = new Game;
+            $game->user_id = $roomAllocated->user_id;
+            $game->room_id = $roomAllocated->id;
+            $game->save();
+
+            return redirect('game/'.$game->id);
+
+        }
+        return back()->with('status', 'Could not authenticate user');
+
     }
 
     /**
@@ -45,7 +66,8 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        //
+        //waiting room
+        //return view('waitingRoom');
     }
 
     /**

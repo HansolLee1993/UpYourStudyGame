@@ -11,7 +11,7 @@
                             <br>
                             <form class="col-md-12" method="POST">
                                 <div class="content text-center">
-                                    <button onClick="" id="makeRoomCode" name="makeRoomCodeName" class="btn btn-primary">Make a Room</button>
+                                    <a href="{{url('room')}}" id="makeRoomCode" name="makeRoomCodeName" class="btn btn-primary">Make a Room</a>
                                     <br><br>
                                     OR
                                     <br><br>
