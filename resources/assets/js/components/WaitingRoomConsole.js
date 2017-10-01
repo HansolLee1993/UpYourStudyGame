@@ -75,7 +75,6 @@ class WaitingRoomConsole extends Component {
     }
 
     render() {
-
         let players = this.renderPlayers();
         return (
             <div className="col-md-8 col-md-offset-2" onLoad={this.onUpdate()}>
@@ -84,7 +83,6 @@ class WaitingRoomConsole extends Component {
                         <div className="container">
                             <div className="row">
                                 {players}
-                                <div>Here</div>
                             </div>
                         </div>
                     </div>
