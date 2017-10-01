@@ -13,7 +13,7 @@ class WaitingRoomController extends Controller
      */
     public function index()
     {
-        return view('waitingRoom');
+        return view('primary/answerSelection');
     }
 
     /**

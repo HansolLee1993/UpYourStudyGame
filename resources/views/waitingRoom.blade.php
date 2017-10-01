@@ -5,7 +5,7 @@
         <h1>Waiting Room</h1>
         <hr>
     </div>
-    <div class="container" id="room">
+    <div class="container" id="waitingRoom">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
