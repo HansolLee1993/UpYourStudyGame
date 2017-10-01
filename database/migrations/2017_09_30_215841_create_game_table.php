@@ -18,6 +18,7 @@ class CreateGameTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id'); //game creator
             $table->unsignedInteger('room_id');
+            $table->char('code', 4);
             $table->timestamp('created_at')->default(DB::raw('NOW()'));
         });
     }

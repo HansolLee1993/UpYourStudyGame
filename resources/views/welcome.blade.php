@@ -7,19 +7,25 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="text-center">
+                            @if (session('status'))
+                                <div class="alert alert-danger">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                             <h1><b>Welcome!</b></h1>
                             <br>
-                            <form class="col-md-12" method="POST">
+                            <form class="col-md-12" method="POST" action="{{url('join')}}">
+                                {{csrf_field()}}
                                 <div class="content text-center">
-                                    <a href="{{url('room')}}" id="makeRoomCode" name="makeRoomCodeName" class="btn btn-primary">Make a Room</a>
+                                    <a href="{{url('room')}}" id="makeRoomCode" class="btn btn-primary">Make a Room</a>
                                     <br><br>
                                     OR
                                     <br><br>
                                     <input id="roomCode" name="roomCodeName" type="text" placeholder="Room Code" />
                                     <br><br>
-                                    <input id="roomTitle" name="roomTitleName" type="text" placeholder="Name" />
+                                    <input id="roomTitle" name="playerName" type="text" placeholder="Name" />
                                     <br><br>
-                                    <button onClick="" id="joinRoom" name="joinRoomName" class="btn btn-success">Join Room</button>
+                                    <button type="submit" id="joinRoomBtn" class="btn btn-success">Join Room</button>
                                 </div>
                             </form>
                         </div>
