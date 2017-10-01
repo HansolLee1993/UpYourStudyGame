@@ -1382,6 +1382,7 @@ module.exports = __webpack_require__(82);
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Example__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_WaitingRoomConsole__ = __webpack_require__(89);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -1392,10 +1393,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __webpack_require__(23);
 
 
+
 /***/ }),
 /* 23 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+throw new Error("Cannot find module \"laravel-echo\"");
 
 window._ = __webpack_require__(24);
 
@@ -1441,14 +1446,16 @@ if (token) {
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from 'laravel-echo'
 
-// window.Pusher = require('pusher-js');
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+window.Pusher = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"pusher-js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
+  broadcaster: 'pusher',
+  key: '9f1f47e08d51e95e3d91',
+  cluster: 'us2',
+  encrypted: false
+});
 
 /***/ }),
 /* 24 */
@@ -54347,6 +54354,247 @@ module.exports = function (css) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_toastify__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_toastify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_toastify__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_toastify_dist_ReactToastify_min_css__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_toastify_dist_ReactToastify_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_toastify_dist_ReactToastify_min_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
+throw new Error("Cannot find module \"laravel-echo\"");
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+window.Pusher = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"pusher-js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var WaitingRoomConsole = function (_Component) {
+    _inherits(WaitingRoomConsole, _Component);
+
+    function WaitingRoomConsole(props) {
+        _classCallCheck(this, WaitingRoomConsole);
+
+        var _this = _possibleConstructorReturn(this, (WaitingRoomConsole.__proto__ || Object.getPrototypeOf(WaitingRoomConsole)).call(this, props));
+
+        _this.state = {
+            game: [],
+            host: [],
+            players: []
+        };
+        _this.onUpdate = _this.onUpdate.bind(_this);
+        _this.renderPlayers = _this.renderPlayers.bind(_this);
+        return _this;
+    }
+
+    _createClass(WaitingRoomConsole, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.setState({
+                game: phpvars.game,
+                host: phpvars.host,
+                players: phpvars.players
+            });
+        }
+    }, {
+        key: 'onUpdate',
+        value: function onUpdate(e) {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_4_jquery___default()(document).ready(function () {
+                window.Echo.channel('game.' + _this2.state.game['id']).listen('PlayerJoined', function (e) {
+                    var found = _this2.state.players.find(function (player) {
+                        return player.id == e.player.id;
+                    });
+                    if (!found) {
+                        var players = Object.assign([], _this2.state.players);
+                        players.push(e.player);
+                        if (players.length == 1) {
+                            _this2.setState({
+                                players: players,
+                                host: e.player
+                            });
+                        } else {
+                            _this2.setState({
+                                players: players
+                            });
+                        }
+                    }
+                });
+            });
+        }
+    }, {
+        key: 'notify',
+        value: function notify() {
+            Object(__WEBPACK_IMPORTED_MODULE_2_react_toastify__["toast"])("Wow so easy !");
+        }
+    }, {
+        key: 'renderPlayers',
+        value: function renderPlayers() {
+            var players = [];
+            console.log(Array.isArray(this.state.players));
+            if (Array.isArray(this.state.players) && this.state.players.length == 0) {
+                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        null,
+                        'No players'
+                    )
+                );
+            }
+            console.log(this.state.players);
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+
+            try {
+                for (var _iterator = this.state.players[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var player = _step.value;
+
+                    players.push(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { key: 'player-' + player['id'], className: 'col-md-2' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'waitingRoom-avatar', src: 'http://localhost:8000/avatars/smiley_face.png' }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'span',
+                            null,
+                            player['name']
+                        ),
+                        player['id'] == this.state.host['id'] && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'span',
+                            { className: 'label label-default' },
+                            'host'
+                        )
+                    ));
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                null,
+                players
+            );
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var players = this.renderPlayers();
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'col-md-8 col-md-offset-2', onLoad: this.onUpdate() },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'panel panel-default' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'panel-body' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'container' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'row' },
+                                players
+                            )
+                        )
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'panel panel-default' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { className: 'panel-body' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'waitingRoom-Code text-center' },
+                            'Room Code:',
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'waitingRoom-Label' },
+                                this.state.game['code']
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'div',
+                            { className: 'text-center' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                'Go to upyourstudygame.tech'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                'Enter your name and the room code',
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { className: 'waitingRoom-Label' },
+                                    this.state.game['code']
+                                ),
+                                '\xA0to join the game'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'p',
+                                null,
+                                'Host! Click start when everyone has joined the room!'
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return WaitingRoomConsole;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* unused harmony default export */ var _unused_webpack_default_export = (WaitingRoomConsole);
+
+// We only want to try to render our component on pages that have a div with an ID
+// of "example"; otherwise, we will see an error in our console
+if (document.getElementById('waitingRoom-console-react-entry')) {
+    __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(WaitingRoomConsole, null), document.getElementById('waitingRoom-console-react-entry'));
+}
 
 /***/ })
 /******/ ]);
