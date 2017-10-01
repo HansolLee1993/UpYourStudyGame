@@ -7,6 +7,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{!! asset('images/logo1.png') !!}"/>
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -18,6 +19,7 @@
     <link href="{{ asset('css/answerInput.css') }}" rel="stylesheet">
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/secondaryWelcome.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/global.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
