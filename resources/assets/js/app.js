@@ -9,3 +9,4 @@ require('./bootstrap');
 import Example from './components/Example';
 import SecondaryAnswerSelection from './components/SecondaryAnswerSelection';
 import SecondaryAnswerInput from './components/SecondaryAnswerInput';
+import WaitingRoomConsole from './components/WaitingRoomConsole';

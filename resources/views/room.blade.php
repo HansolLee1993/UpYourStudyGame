@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="container" id="room">
-        <div class="row">
+        <div class="row" id="example">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         @if (session('status'))
-                            <div class="alert alert-success">
+                            <div class="alert alert-danger">
                             {{ session('status') }}
                             </div>
                         @endif
@@ -16,9 +16,8 @@
                             <h4>User sign in and make a room</h4>
 
 
-                            <form class="col-md-12 row room-form" method="POST" action="{{ route('room') }}">
+                            <form class="col-md-12 row room-form" method="POST" action="{{ url('room') }}">
                                 {{ csrf_field() }}
-
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} col-md-3">
                                     <div class="">
                                         <input id="email" type="email" placeholder="Email" class="form-control" name="email" value="{{ old('email') }}" required>
