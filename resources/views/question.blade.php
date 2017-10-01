@@ -54,30 +54,14 @@
                                     <div class="input_fields_wrap"></div>
                                 </div>
 
-                                <div class="col-md-12 question-padding text-center">
-                                    <div class="form-group question-padding ">
-                                        <button class="btn-info btn col-md-4 ">Submit</button>
+                                <div class="col-md-12 question-padding ">
+                                    <div class="form-group question-padding text-center">
+                                        <button class="btn-info btn btn-lg submit-btn-width text-center">Submit</button>
                                     </div>
                                 </div>
                             </form>
 
-                            <div class="col-md-12">
 
-                                @if(isset($questions))
-                                    @foreach($questions as $question)
-                                        <p>{{ $question->question }}</p>
-                                        <div>
-                                            <strong>Tag:</strong>
-                                            @if(isset($question->tags))
-                                                @foreach($question->tags as $tag)
-                                                    <label class="label label-info">{{ $tag->tag }}</label>
-                                                @endforeach
-                                            @endif
-
-                                        </div>
-                                    @endforeach
-                                @endif
-                            </div>
                         </div>
                     </div>
                 </div>
