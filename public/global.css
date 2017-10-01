@@ -5,3 +5,8 @@
 .global-bg-color-orange {
     background-color: #FABC47;
 }
+
+.global-answerSelection-bg-text-color {
+    color: white;
+    background-color: #FABC47;
+}
