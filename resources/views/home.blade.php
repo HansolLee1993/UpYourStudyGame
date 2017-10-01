@@ -86,7 +86,7 @@
             if(x < max_fields){
                 x++;
                 $(wrapper).append(
-                    '<div class="col-md-offset-3 col-md-8 appending-top-padding row">' +'<div class="col-md-11 no-margin-padding">'+
+                    '<div class="col-md-offset-3 col-md-8 appending-top-padding row" id="appendinput">' +'<div class="col-md-11 no-margin-padding">'+
                     '<input type="text" class="form-control"  name="questions[]"/>' +'</div>' +
                     '<a href="#" class="remove_field col-md-1">remove</a></div>'); //add input box
             }

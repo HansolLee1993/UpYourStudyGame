@@ -15,18 +15,18 @@
     padding-right: 0px;
 }
 
-#room .col-md-3 {
+.col-md-3 {
     padding-right: 0px;
 }
 
-#room .panel-body{
+.panel-body{
     padding-bottom: 50px;
 }
 
-#question .question-padding{
+.question-padding{
     padding:20px;
 }
-#question .appending-top-padding {
+.appending-top-padding {
     padding-left:0px;
     padding-top:10px;
 
@@ -38,5 +38,10 @@
 
 .submit-btn-width{
     width: 200px;
+}
+
+#appendinput .col-md-11{
+    padding-left :0px;
+
 }
 
