@@ -23,5 +23,3 @@ Route::get('/room', 'RoomController@create')->name('room');
 Route::post('/room', 'RoomController@store');
 
 Route::get('/game/{id}', 'GameController@index');
-
-//Route::get('/waitingRoom', 'WaitingRoomController@index')->name('waitingRoom');
