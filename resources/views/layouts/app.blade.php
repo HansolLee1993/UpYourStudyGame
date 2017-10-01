@@ -34,7 +34,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <img style="width:7%;border-radius:50px;" class="pull-left" src={{asset('images/logo1.png')}} />
+                    &nbsp;
+                    <a style="margin:0;" class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
