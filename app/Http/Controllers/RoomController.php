@@ -49,6 +49,7 @@ class RoomController extends Controller
             $game->user_id = $roomAllocated->user_id;
             $game->room_id = $roomAllocated->id;
             $game->code = $roomAllocated->code;
+            //$game->tag($request->categories);
             $game->save();
 
             return redirect('game/'.$game->id);

@@ -18,9 +18,9 @@ class CreatePlayerTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('game_id');
+            $table->integer('points')->default(0);
             $table->timestamps();
         });
-
     }
 
     /**

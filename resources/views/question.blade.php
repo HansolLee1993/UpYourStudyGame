@@ -23,7 +23,7 @@
                                 <div class="form-group question-padding col-md-12">
                                     <label for="question" class="col-md-3 control-label text-center">Categories</label>
                                     <div class="col-md-4 no-padding-left " >
-                                        <input type="text" name="tags" id = "taginput"
+                                        <input type="text" name="tags[]" id = "taginput"
                                                placeholder="Tags" class="tm-input form-control "/>
                                     </div>
                                     <div id="invisible-tag-form">
@@ -82,7 +82,7 @@
 
 
             var x = 1;
-            $(add_button).click(function(e){
+            $(add_button).on('click', (e) => {
                 e.preventDefault();
                 if(x < max_fields){
                     x++;
@@ -98,7 +98,7 @@
             })
 
 
-            $(add_tags_button).click(function(e) {
+            $(add_tags_button).on('click', (e)=> {
                 e.preventDefault();
                 tag = $("#taginput").val();
                 console.log(tag);
@@ -109,9 +109,9 @@
                 );
 
                 $("#invisible-tag-form").append(
-                    '<input id="invisible-tag-form" name="tags[]" data-role="tagsinput" type="hidden" value="'+ tag +'">'
+                    '<input name="tags[]" data-role="tagsinput" type="hidden" value="'+ tag +'">'
                 );
-
+                $("#taginput").val('');
             });
 
 

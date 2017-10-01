@@ -7,4 +7,5 @@
 
 require('./bootstrap');
 import Example from './components/Example';
-import WaitingRoomConsole from './components/WaitingRoomConsole';
+import Console from './components/primary/Console';
+import GameView from './components/secondary/GameView';
