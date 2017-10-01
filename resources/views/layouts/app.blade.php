@@ -14,6 +14,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/room.css') }}" rel="stylesheet">
     <link href="{{ asset('css/waitingRoom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
