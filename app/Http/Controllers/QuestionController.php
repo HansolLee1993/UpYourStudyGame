@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -13,7 +14,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        return view('question');
+        $questions = Question::all();
+        return view('question', array('questions'=>$questions));
     }
 
     /**
@@ -34,7 +36,22 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'questions' => 'required',
+            'tags' => 'required',
+        ]);
+
+        //$input = $request->all();
+        $allQuestions = $request->questions;
+        $allTags = $request->tags;
+
+        foreach($allQuestions as $question) {
+            $question = Question::create(['question'=>$question]);
+            $question->tag($allTags);
+        }
+
+        //$tags = explode(",", $request->tags);
+        return back()->with('success','Question created successfully.');
     }
 
     /**
